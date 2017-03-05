@@ -9,6 +9,18 @@ draft = false
 
 Installation, configuration et deployement.
 
+## Qu'est ce que Hugo
+
+C'est un générateur de site statique. dans la meme famille on retrouve [Jekill](https://jekyllrb.com/). 
+
+Les cas d'utilisations sont :
+- Une home de projet open source
+- Un blog
+- Une homepage de site public
+- Un portefolio
+- et tout ce que peut gérer un site html statique
+
+
 ## Machine de travail
 
 Je suis sous ubuntu 16.04, mais cet exemple d'installation fonctionne sur Linux et Mac OS à minima.
@@ -28,27 +40,54 @@ hugo version
 
 ```
 hugo new site monblog
+
+# pour voir ce qui a été généré ( soyons curieux :) )
+cd monblog
+tree -a
 ```
 
-
-(La documention est [la](https://gohugo.io/overview/quickstart/).)
+(La documention est [là](https://gohugo.io/overview/quickstart/).)
 
 
 ## Ecrire son premier article
 
-... generer + commande cat ...
 
+``` 
+hugo new post/protocols-war.md
+echo "
+# Protocols war
 
+ \![ ](https://imgs.xkcd.com/comics/standards.png)
+
+" >> content/post/protocols-war.md
+```
+
+Je vous invite à modifier le post, avec peut être un contenu plus personnel. Via le cartouche du header, vous pouvez également renseigner des information comme l'etat brouillon, le titre du post, ou les tags associés. Notez que *dans le header, le titre est vide, il faut le remplir* sinon le titre sera vide.
+
+```
+vim content/post/protocols-war.md
+```
+(la documentation est [par ici](https://gohugo.io/overview/quickstart/#step-3-add-content).)
 
 
 ## Choisir un theme et l'installer
 
-tree -I "themes*|public*"
-git clone https://github.com/jbub/ghostwriter themes/ghostwriter
+Avec hugo, pas de theme par defaut. Je vous laisse vous perdre dans [la gallerie de thème disponible](http://themes.gohugo.io/) et choisir le votre (ou le [faire](https://gohugo.io/themes/creation/). Mon choix s'est arrêté sur ghostwriter. Je reprend donc ce pour l'exemple, à remplacer par votre préférez au besoin donc.
 
+
+```
+git clone https://github.com/jbub/ghostwriter themes/ghostwriter
+```
+
+Faisons nous plaisir et regardons le resultat. Option -D pour générer aussi les brouillons, par default __hugo serve__ surveille les modifications et regénérer automatiquement, plus d'info avec : hugo help serve.
+
+```
+hugo serve -D 
+```
 
 ## Publier le blog sur github page
 
+Bon, on arrive dans la partie qui merite un peu de concentration et d'explication.  
 
 
 
