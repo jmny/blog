@@ -1,10 +1,10 @@
-baseurl = "https://example.com/"
+baseurl = "https://jmny.github.io/"
 title = "Jmny's notes"
 theme = "ghostwriter"
 languageCode = "fr-fr"
 copyright = "Louis PERRIER"
-disqusShortname = "XXX"
-googleAnalytics = "XXX"
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
 
 [Author]
     name = "Louis PERRIER"
